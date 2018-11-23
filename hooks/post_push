@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "------ HOOK START - POST-PUSH -------"
+docker tag $IMAGE_NAME $DOCKER_REPO:latest
+docker push $DOCKER_REPO:latest
+echo "------ HOOK END - POST-PUSH -------"
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "------ HOOK START - BUILD -------"
+docker build --build-arg HELM_VERSION=$DOCKER_TAG -t $IMAGE_NAME .
+echo "------ HOOK END - BUILD -------"
