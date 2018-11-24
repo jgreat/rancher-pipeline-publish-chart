@@ -2,6 +2,6 @@ ARG HELM_VERSION
 
 FROM jgreat/helm-with-plugins:${HELM_VERSION}
 
-ADD ./publish-charts.sh /bin/publish-charts.sh
+ADD publish-chart.sh /bin/
 
 CMD [ "/bin/publish-chart.sh" ]
