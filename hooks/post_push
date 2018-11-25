@@ -2,6 +2,8 @@
 
 echo "------ HOOK START - POST-PUSH -------"
 
+ls -al
+
 if [ -f ".tags" ]; then
     IFS=',' read -ra TAGS <<< $(cat .tags)
     for t in "${TAGS[@]}"; do
