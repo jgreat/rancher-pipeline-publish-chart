@@ -4,7 +4,7 @@ echo "------ HOOK START - POST-PUSH -------"
 
 ls -al
 
-if [ -f ".tags" ]; then
+if [ -f "./.tags" ]; then
     IFS=',' read -ra TAGS <<< $(cat .tags)
     for t in "${TAGS[@]}"; do
         echo "Found tag: ${t}"
@@ -14,4 +14,3 @@ if [ -f ".tags" ]; then
 fi
 
 echo "------ HOOK END - POST-PUSH -------"
-
