@@ -1,16 +1,7 @@
 #!/bin/bash
 
 echo "------ HOOK START - POST-PUSH -------"
-
-ls -al
-
-if [ -f "./.tags" ]; then
-    IFS=',' read -ra TAGS <<< $(cat .tags)
-    for t in "${TAGS[@]}"; do
-        echo "Found tag: ${t}"
-        docker tag ${IMAGE_NAME} ${DOCKER_REPO}:${t}
-        docker push ${DOCKER_REPO}:${t}
-    done
-fi
-
+docker tag $IMAGE_NAME $DOCKER_REPO:latest
+docker push $DOCKER_REPO:latest
 echo "------ HOOK END - POST-PUSH -------"
+
