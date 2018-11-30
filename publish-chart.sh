@@ -39,7 +39,7 @@ helm package -d .build/charts .build/${CHART_NAME}
 
 # Add Remote Repo
 helm repo add --username "${HELM_REPO_USERNAME}" --password "${HELM_REPO_PASSWORD}" \
-${HELM_REPO_NAME} ${HELM_REPO_URL}
+pipeline-tmp ${HELM_REPO_URL}
 
 # Publish Chart 
-helm push .build/charts/${CHART_NAME}-${CHART_VERSION}.tgz ${HELM_REPO_NAME}
+helm push .build/charts/${CHART_NAME}-${CHART_VERSION}.tgz pipeline-tmp
